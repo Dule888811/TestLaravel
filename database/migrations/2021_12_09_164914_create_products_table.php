@@ -17,9 +17,11 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->text('title');
+            $table->decimal('price');
             $table->longText('description');
-            $table->binary('image');
+            $table->binary('image')->nullable();
             $table->boolean('new');
+            $table->unsignedBigInteger('category_id');
             $table->timestamps();
             $table->engine = 'InnoDB';
             $table->charset = 'utf8';

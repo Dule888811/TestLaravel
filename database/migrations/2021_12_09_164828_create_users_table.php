@@ -15,8 +15,14 @@ class CreateUsersTable extends Migration
     {
         Schema::enableForeignKeyConstraints();
         Schema::create('users', function (Blueprint $table) {
+
             $table->bigIncrements('id');
+            $table->text('name');
             $table->string('phone')->unique();
+            $table->string('email')->unique();
+            $table->dateTime('email_verified_at');
+            $table->string('password');
+            $table->string('remember_token');
             $table->string('location');
             $table->boolean('is_admin')->default(0);
             $table->timestamps();
@@ -26,12 +32,7 @@ class CreateUsersTable extends Migration
             $table->collation = 'utf8_unicode_ci';
 
         });
-      /*  Schema::table('users', function (Blueprint $table) {
-            Schema::enableForeignKeyConstraints();
-            $table->unsignedInteger('product_id');
 
-            $table->foreign('product_id')->references('id')->on('products');
-        }); */
 
     }
 

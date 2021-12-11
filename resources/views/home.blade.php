@@ -15,7 +15,7 @@
                     {{csrf_field()}}
                     <div class="form-input ">
                         <label for="destripton">destripton:
-                            <input type="text"  name="destripton" id="destripton"></label>
+                            <input type="text"  name="description" id="description"></label>
                     </div>
                    <div class="form-input">
                     <label for="title">Title:
@@ -26,9 +26,9 @@
                             <input type="text" class="align-content-center" name="price" id="price"></label>
                     </div>
                     <div class="form-input">
-                    <input type="radio" class="align-content-center" id="new" name="new" value="new">
+                    <input type="radio" class="align-content-center" id="new" name="result" value="1">
                      <label for="new">new</label><br>
-                     <input type="radio" id="old" name="old" value="old">
+                     <input type="radio" id="old" name="result" value="0">
                         <label for="new">old</label><br>
                     </div>
                     <div class="form-input">
@@ -38,9 +38,6 @@
                         <option value="{{$category->id}}">{{$category->name}}</option>
                         @endforeach
                         </select>
-                    </div>
-                    <div class="form-input">
-                    <input type="hidden" id="{{\Illuminate\Support\Facades\Auth::id()}}" name="{{\Illuminate\Support\Facades\Auth::id()}}" value="{{\Illuminate\Support\Facades\Auth::id()}}">
                     </div>
                     <div class="form-input">
                         <label for="image">image:

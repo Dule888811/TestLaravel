@@ -24,6 +24,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/ads/store', 'AdsController@store')->name('ads.store');
 Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
     Route::get('main','MainController@index')->name('main');
 });

@@ -17,5 +17,6 @@ $factory->define(Product::class, function (Faker $faker) {
         'new' => random_int(0,1),
         'price' => rand(1055,100889)/10,
         'category_id' =>  factory('App\Category'),
+        'user_id' =>  factory('App\User'),
     ];
 });

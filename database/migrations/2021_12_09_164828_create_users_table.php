@@ -26,7 +26,6 @@ class CreateUsersTable extends Migration
             $table->string('location');
             $table->boolean('is_admin')->default(0);
             $table->timestamps();
-            $table->unsignedBigInteger('product_id');
             $table->engine = 'InnoDB';
             $table->charset = 'utf8';
             $table->collation = 'utf8_unicode_ci';

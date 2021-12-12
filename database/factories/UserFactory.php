@@ -26,7 +26,6 @@ $factory->define(User::class, function (Faker $faker) {
         'password' => Hash::make('admin'), // password
         'remember_token' => Str::random(10),
         'phone' => $faker->numerify('###-###-####'),
-        'product_id' =>  factory('App\Product'),
         'is_admin' => true
     ];
 });

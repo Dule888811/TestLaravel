@@ -22,6 +22,7 @@ class CreateProductsTable extends Migration
             $table->binary('image')->nullable();
             $table->boolean('new');
             $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
             $table->engine = 'InnoDB';
             $table->charset = 'utf8';

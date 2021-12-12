@@ -9,6 +9,7 @@ namespace App\Repositories;
 use App\Http\Controllers\RepositoriesInterface;
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdsRepositories implements RepositoriesInterface
 {
@@ -24,6 +25,7 @@ class AdsRepositories implements RepositoriesInterface
            $product->price = $request->price;
            $product->new = $request->result;
            $product->category_id = $request->category;
+           $product->user_id = Auth::id();
         $product->save();
     }
 }

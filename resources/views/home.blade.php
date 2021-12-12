@@ -6,7 +6,42 @@
             {{$error}}<br>
         @endforeach
     @endif
-    @dd($products)
+    <div class="container text-center">
+
+        @foreach ($products as $product)
+            <div class="form-input">
+                <label for="destripton">destripton:
+                    <input type="text"  name="Productdescription" value={{$product->description}}></label>
+            </div>
+            <div class="form-input">
+                <label for="title">Title:
+                    <input type="text" value={{$product->title}} name="Producttitle"></label>
+            </div>
+            <div class="form-input">
+                <label for="price">Price:
+                    <input type="text" value={{$product->price}} name="Productprice"></label>
+            </div>
+            <div class="form-input">
+                <label for="price">Price:
+                    <input type="text" value={{$product->category->name}} name="Productcategory"></label>
+            </div>
+            <div class="form-input">
+                <label for="Productnew">1=new:
+                    <input type="text" value={{$product->new}} name="Productnew"></label>
+            </div>
+
+            
+      <br><br>
+
+    @endforeach
+        {{ $products->links() }}
+    </div>
+
+
+
+
+
+
 <div class="container text-center">
     <div class="row justify-content-center">
         <div class="col-md-8 ">

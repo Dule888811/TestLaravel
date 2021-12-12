@@ -5,8 +5,11 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Product;
 use App\User;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Auth;
+
 
 class HomeController extends Controller
 {
@@ -28,8 +31,8 @@ class HomeController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $products = $user->Products()->orderBy('created_at','desc')->limit(16)->get();
+        $products = $user->Products()->simplePaginate(5);
         $categories = Category::all();
-        return view('home')->with(['categories' => $categories,'products' => $products]);
+        return view('/home')->with(['categories' => $categories,'products' => $products]);
     }
 }

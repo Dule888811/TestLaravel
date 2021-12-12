@@ -28,7 +28,7 @@ class HomeController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $products = $user->Products()->get();
+        $products = $user->Products()->orderBy('created_at','desc')->limit(16)->get();
         $categories = Category::all();
         return view('home')->with(['categories' => $categories,'products' => $products]);
     }

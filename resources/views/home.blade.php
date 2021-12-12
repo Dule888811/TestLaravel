@@ -6,6 +6,7 @@
             {{$error}}<br>
         @endforeach
     @endif
+    @dd($products)
 <div class="container text-center">
     <div class="row justify-content-center">
         <div class="col-md-8 ">

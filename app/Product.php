@@ -20,6 +20,6 @@ class Product extends Model
 
     public function User()
     {
-        return $this->hasMany('App\User');
+        return $this->belongsTo('App\User');
     }
 }

@@ -30,7 +30,7 @@
                     <input type="text" value={{$product->new}} name="Productnew"></label>
             </div>
 
-            
+
       <br><br>
 
     @endforeach

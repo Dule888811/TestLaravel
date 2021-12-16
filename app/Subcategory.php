@@ -13,8 +13,8 @@ class Subcategory extends Model
     protected $fillable = [
         'name','category_id'
     ];
-    public function Categories()
+    public function Category()
     {
-        return $this->hasMany('App\Subcategory');
+        return $this->belongsTo('App\Category');
     }
 }

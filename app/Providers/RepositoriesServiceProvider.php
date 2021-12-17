@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
-use App\Http\Controllers\RepositoriesInterface;
+use App\Http\Controllers\AdsRepositoriesInterface;
+use App\Http\Controllers\ProductsRepositoriesInterface;
 use App\Repositories\AdsRepositories;
+use App\Repositories\ProductsRepositories;
 use Illuminate\Support\ServiceProvider;
 
 class RepositoriesServiceProvider extends ServiceProvider
@@ -25,6 +27,7 @@ class RepositoriesServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->app->bind(RepositoriesInterface::class,AdsRepositories::class);
+        $this->app->bind(AdsRepositoriesInterface::class, AdsRepositories::class);
+        $this->app->bind(ProductsRepositoriesInterface::class, ProductsRepositories::class);
     }
 }

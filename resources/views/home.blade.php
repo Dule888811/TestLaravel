@@ -31,9 +31,9 @@
             </div>
 
 
-      <br><br>
+            <br><br>
 
-    @endforeach
+        @endforeach
         {{ $products->links() }}
     </div>
 

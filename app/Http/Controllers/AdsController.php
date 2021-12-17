@@ -2,16 +2,16 @@
 
 
 namespace App\Http\Controllers;
-use App\Repositories\AdsRepositories;
 use Illuminate\Http\Request;
 
 class AdsController extends Controller
 {
     private $adsRepositories;
-    public function __construct(RepositoriesInterface $adsRepositories)
+    public function __construct(AdsRepositoriesInterface $adsRepositories)
     {
-      $this->adsRepositories = $adsRepositories;
+        $this->adsRepositories = $adsRepositories;
     }
+
     public function store(Request $request)
     {
         $this->validate($request, [

@@ -23,7 +23,7 @@ Route::get('/', function () {
 Auth::routes();
 
 
-Route::get('/user/', 'UserController@index')->name('user');
+Route::get('user/{user_id}/', 'UserController@index')->name('user');
 //Route::get('/product', 'ProductsController@index')->name('product');
 Route::get('product/{product}', function (App\Product $product) {
     return view('/product')->with(['product' => $product]);

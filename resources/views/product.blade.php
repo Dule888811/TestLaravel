@@ -11,7 +11,7 @@
         <li class="product">price:{{$product['price']}}</li>
         <li class="product">1=new:{{$product['new']}}</li>
         <li class="product">created at{{$product['created_at']}}</li>
-        <a href="{{route('user',['user' => $product->user])}}">Go to user</a><br>
+        <a href="{{route('user',['user_id' => $product->user['id']])}}">Go to user</a><br>
         <a href="{{route('admin.main')}}">Back to maintaining</a>
 
     </ul>

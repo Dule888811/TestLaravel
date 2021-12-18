@@ -28,9 +28,9 @@ Route::get('user/{user_id}/', 'UserController@index')->name('user');
 Route::get('product/{product}', function (App\Product $product) {
     return view('/product')->with(['product' => $product]);
 })->name('product');
+Route::post('search', 'ProductsController@search')->name('search');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/ads/store', 'AdsController@store')->name('ads.store');
 Route::namespace('Admin')->prefix('admin')->middleware('admin')->name('admin.')->group(function () {
     Route::get('main', 'MainController@index')->name('main');
-    Route::get('search', 'ProductController@search')->name('search');
 });

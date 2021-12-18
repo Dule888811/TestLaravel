@@ -57,10 +57,53 @@
 
         </ul>
 
-    <ul>
+
 
 
     </nav>
+
+    <div class="col-md-8 ">
+        <div class="card margin-top">
+            <div class="card-header">
+                <form action ="{{route('search')}}" method="POST">
+                    {{csrf_field()}}
+
+                    <div class="form-input">
+
+                        <input type="radio" class="align-content-center" id="title" name="result" value="title">
+                        <label for="title">Title</label><br>
+                        <input type="radio" id="description" name="result" value="description">
+                        <label for="description">Description</label><br>
+
+
+                        <input type="radio" class="price" id="price" name="result" value="price">
+                        <label for="price">price</label><br>
+
+                        <input type="radio" id="category" name="result" value="category">
+                        <label for="category">category</label><br>
+                        <input type="radio" id="location" name="result" value="location">
+                        <label for="location">location</label><br>
+
+
+
+                    </div>
+
+                    <div class="form-input">
+
+                        <label for="search">Search the products by this options up</label>
+                        <input type="search" id="search" name="search">
+                    </div>
+                    <input type="submit"    value="Search"><br/>
+                </form>
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+
     <div class="container text-center">
 
         @foreach ($products as $product)

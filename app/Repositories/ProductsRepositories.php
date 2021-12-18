@@ -17,7 +17,7 @@ class ProductsRepositories implements ProductsRepositoriesInterface
         $productsArr[] = array();
 
         switch ($request->result) {
-            case "title":
+            case "price":
                 foreach ($products as $product) {
                     if ($product['title'] == $request->search) {
                         $productsArr[] = array_push($product);
@@ -35,7 +35,7 @@ class ProductsRepositories implements ProductsRepositoriesInterface
                     }
                 }
                 break;
-            case "price":
+            case "category":
                 foreach ($products as $product) {
                     if ($product['price'] == $request->search) {
                         $productsArr[] = array_push($product);
@@ -44,7 +44,7 @@ class ProductsRepositories implements ProductsRepositoriesInterface
                     }
                 }
                 break;
-            case "category":
+            case "location":
                 foreach ($products as $product) {
                     if ($product['category'] == $request->search) {
                         $productsArr[] = array_push($product);
@@ -53,7 +53,7 @@ class ProductsRepositories implements ProductsRepositoriesInterface
                     }
                 }
                 break;
-            case "location":
+            case "title":
                 foreach ($products as $product) {
                     if ($product['location'] == $request->search) {
                         $productsArr[] = array_push($product);
@@ -63,6 +63,6 @@ class ProductsRepositories implements ProductsRepositoriesInterface
                 }
                 break;
         }
-
+       return $productsArr;
     }
 }

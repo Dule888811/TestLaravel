@@ -13,6 +13,8 @@ class Product extends Model
          'title', 'description','new','price','category_id','image','user_id',
     ];
 
+    protected $guarded = [];
+
     public function Category()
     {
         return $this->belongsTo('App\Category');

@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    @dd($product->price)
+
+
     <ul class="products-ul">Product Title:{{$product['title']}}
         <li class="product">Name of use:{{$product->user['name']}}</li>
         <li class="product">location:{{$product->user['location']}}</li>

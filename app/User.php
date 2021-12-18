@@ -19,6 +19,9 @@ class User extends Authenticatable
         'name', 'email', 'password','phone','location','email_verified_at','remember_token',
     ];
 
+    protected $guarded = [];
+
+
     /**
      * The attributes that should be hidden for arrays.
      *

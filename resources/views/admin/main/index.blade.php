@@ -34,7 +34,7 @@
                                         <li class="cat-products">1=new:{{$product['new']}}</li>
                                         <li class="cat-products">created at{{$product['created_at']}}</li>
 
-                                        <a href="/product">Go to ads</a>
+                                        <a href="{{route('product', ['product' => $product])}}">Go to ads</a>
                                         <br>
                                         <hr class="rounded">
                                     </ul>
@@ -59,7 +59,7 @@
 
     <ul>
 
-       
+
     </nav>
     <div class="container text-center">
 

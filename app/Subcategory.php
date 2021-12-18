@@ -10,6 +10,9 @@ class Subcategory extends Model
     protected $fillable = [
         'name','category_id'
     ];
+
+    protected $guarded = [];
+
     public function Category()
     {
         return $this->belongsTo('App\Category');

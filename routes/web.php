@@ -24,7 +24,10 @@ Auth::routes();
 
 
 Route::get('/user/', 'UserController@index')->name('user');
-Route::get('/product', 'ProductsController@index')->name('product');
+//Route::get('/product', 'ProductsController@index')->name('product');
+Route::get('product/{product}', function (App\Product $product) {
+    return view('/product')->with(['product' => $product]);
+})->name('product');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/ads/store', 'AdsController@store')->name('ads.store');
 Route::namespace('Admin')->prefix('admin')->middleware('admin')->name('admin.')->group(function () {

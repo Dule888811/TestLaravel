@@ -28,6 +28,7 @@ Route::get('user/{user_id}/', 'UserController@index')->name('user');
 Route::get('product/{product}', function (App\Product $product) {
     return view('/product')->with(['product' => $product]);
 })->name('product');
+
 Route::post('search', 'ProductsController@search')->name('search');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/ads/store', 'AdsController@store')->name('ads.store');

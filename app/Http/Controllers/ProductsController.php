@@ -30,18 +30,9 @@ class ProductsController extends Controller
             ->join('users', 'users.id', '=', 'products.user_id')
             ->select('products.title', 'products.description', 'products.price', 'products.new', 'users.phone', 'users.location', 'users.name')
             ->get();
-        $productsArr[] = array();
 
-        //   foreach($products as $product)
-        //  {
-//dd($product);
-        //if ($products->contains('kaciga')) {
-          //  dd($products);
+        $srearcProducts = $this->productsRepositoriesInterface->search($request);
 
-        //    }
-dd($this->productsRepositoriesInterface->search($request));
-        // $productsArr =
-     //    dd($productsArr);
-
+        return view('/search')->with(['srearcProducts' => $srearcProducts]);
     }
 }

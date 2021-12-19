@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-interface ProductsRepositoriesInterface
+ interface ProductsRepositoriesInterface
 {
     public function search(Request $request);
 }

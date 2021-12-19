@@ -19,22 +19,7 @@ class MainController extends Controller
         $subcategories = Subcategory::all();
         $products = Product::all();
         $categories = Category::all();
-      /*  foreach($categories as $category)
-        {
-            if($category->Subcategories()->count() > 0){
-                $subcategories[] = array_push($subcategories,$category->Subcategories()->get());
-            }
-            if($category->Products()->count() > 0){
-                $products[] = array_push($products,$category->Products()->get());
-            }
-            foreach($products as  $product)
-            {
-//@dd($users['0']['1']['phone']);
-                $colProduct = collect($product);
-                $users[] = array_push($users,User::all()->where('id','==',$product['0']['user_id']));
-            }
 
-        } */
             $newAds =DB::table('products')->orderBy('created_at','desc')->take(15)->get();
         return view('admin.main.index')->with(['categories' => $categories,'products' => $products,'subcategories' => $subcategories,'newAds' => $newAds]);
     }

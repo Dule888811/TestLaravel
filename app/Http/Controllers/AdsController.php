@@ -15,7 +15,11 @@ class AdsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'image' => 'max:5000000max:5000000|mimes:jpeg,png,jpg|dimensions:min_width=100,min_height=100,max_width=1050,max_height=1000'
+            'image' => 'max:5000000max:5000000|mimes:jpeg,png,jpg|dimensions:min_width=100,min_height=100,max_width=1050,max_height=1000',
+            'price' => 'required','decimal',
+            'title' => 'required',
+
+
         ]);
         $this->adsRepositories->store($request);
         return redirect()->route('home');

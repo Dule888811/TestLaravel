@@ -75,5 +75,8 @@ ul li ul li {
 ul .categories:hover .hide {
     display: block;
 }
+.products-ul {
+    text-align: center;
+}
 
 

@@ -1,10 +1,10 @@
 <?php
 
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\Admin;
+use App\Http\Controllers\Controller;
 use App\Product;
-use App\Repositories\ProductsRepositories;
+use App\Repositories\Admin\ProductsRepositories;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -21,7 +21,7 @@ class ProductsController extends Controller
     public function index(Product $product)
     {
 
-        return view('/product')->with(['product' => $product]);
+        return view('/admin.product')->with(['product' => $product]);
     }
 
     public function search(Request $request)
@@ -33,6 +33,6 @@ class ProductsController extends Controller
 
         $srearcProducts = $this->productsRepositoriesInterface->search($request);
 
-        return view('/search')->with(['srearcProducts' => $srearcProducts]);
+        return view('/admin.search')->with(['srearcProducts' => $srearcProducts]);
     }
 }

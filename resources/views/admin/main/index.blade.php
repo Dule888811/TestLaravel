@@ -34,7 +34,7 @@
                                         <li class="cat-products">1=new:{{$product['new']}}</li>
                                         <li class="cat-products">created at{{$product['created_at']}}</li>
 
-                                        <a href="{{route('product', ['product' => $product])}}">Go to ads</a>
+                                        <a href="{{route('admin.product', ['product' => $product])}}">Go to ads</a>
                                         <br>
                                         <hr class="rounded">
                                     </ul>
@@ -65,7 +65,7 @@
     <div class="col-md-8 ">
         <div class="card margin-top">
             <div class="card-header">
-                <form action ="{{route('search')}}" method="POST">
+                <form action ="{{route('admin.search')}}" method="POST">
                     {{csrf_field()}}
 
                     <div class="form-input">

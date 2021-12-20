@@ -2,10 +2,12 @@
 
 namespace App\Providers;
 
+use App\Http\Controllers\Admin\ProductsRepositoriesInterface;
+use App\Http\Controllers\Admin\UserRepositoriesInterface;
 use App\Http\Controllers\AdsRepositoriesInterface;
-use App\Http\Controllers\ProductsRepositoriesInterface;
+use App\Repositories\Admin\UserRepositories;
 use App\Repositories\AdsRepositories;
-use App\Repositories\ProductsRepositories;
+use App\Repositories\Admin\ProductsRepositories;
 use Illuminate\Support\ServiceProvider;
 
 class RepositoriesServiceProvider extends ServiceProvider
@@ -29,5 +31,6 @@ class RepositoriesServiceProvider extends ServiceProvider
     {
         $this->app->bind(AdsRepositoriesInterface::class, AdsRepositories::class);
         $this->app->bind(ProductsRepositoriesInterface::class, ProductsRepositories::class);
+        $this->app->bind(UserRepositoriesInterface::class, UserRepositories::class);
     }
 }

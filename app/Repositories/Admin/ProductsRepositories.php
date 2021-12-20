@@ -1,11 +1,11 @@
 <?php
 
 
-namespace App\Repositories;
+namespace App\Repositories\Admin;
 
-
+use App\Repositories;
 use App\Category;
-use App\Http\Controllers\ProductsRepositoriesInterface;
+use App\Http\Controllers\Admin\ProductsRepositoriesInterface;
 use App\Product;
 use App\Subcategory;
 use Illuminate\Http\Request;
@@ -17,7 +17,7 @@ class ProductsRepositories implements ProductsRepositoriesInterface
 
         $products =  DB::table('products')
             ->join('users', 'users.id', '=', 'products.user_id')
-            ->select('products.title','products.category_id','products.description','products.price', 'products.new','users.phone', 'users.location','users.name')
+            ->select('products.title','products.image','products.category_id','products.description','products.price', 'products.new','users.phone', 'users.location','users.name')
             ->get();
         $SearchCollection = collect([]);
         $result = $request->result;

@@ -17,12 +17,7 @@ class AdsRepositories implements AdsRepositoriesInterface
         $product->description = $request->description;
         $product->title = $request->title;
         $image = $request->image;
-
         $name= $image->getClientOriginalName();
-        $image->move(public_path('storage/app/public/images'), $name);
-      //  $image->move( public_path() . '/images/' . $name);
-       // $url = (public_path() . '/images/' . $name);
-
           $product->image = $name;
         $product->price = $request->price;
         $product->new = $request->result;

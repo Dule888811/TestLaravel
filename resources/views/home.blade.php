@@ -7,7 +7,6 @@
         @endforeach
     @endif
     <div class="container text-center">
-
         @foreach ($products as $product)
             <div class="form-input">
                 <label for="destripton">destripton:
@@ -29,6 +28,13 @@
                 <label for="Productnew">1=new:
                     <input type="text" value={{$product->new}} name="Productnew"></label>
             </div>
+            @if($product->image != NULL)
+                <div class="form-input">
+
+                    <img with="30%" hight="30%" src="{{ asset('/storage/app/public/images/' . $product->image) }}" />
+                </div>
+            @endif
+
 
 
             <br><br>

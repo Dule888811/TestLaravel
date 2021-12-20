@@ -32,6 +32,13 @@
                     <input type="text" name="new" value={{$product->new}}></label>
             </div>
 
+            @if($product->image != NULL)
+                <div class="form-input">
+
+                    <img  src="{{ asset('/storage/app/public/images/' . $product->image) }}" />
+                </div>
+            @endif
+
 
             <br><br>
 

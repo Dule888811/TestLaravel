@@ -136,6 +136,13 @@
                 <input type="text" value={{$product->user->phone}} name="phone"></label>
             </div>
 
+            @if($product->image != NULL)
+                <div class="form-input">
+
+                    <img  src="{{ asset('/storage/app/public/images/' . $product->image) }}" />
+                </div>
+            @endif
+
 
 
             <br><br>
